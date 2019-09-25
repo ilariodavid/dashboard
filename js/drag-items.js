@@ -90,7 +90,6 @@ function moveAt(pageX, pageY) {
 function onMouseMove(event) {        
 
     var view = document.querySelector('.view');
-    var sh = view.scrollHeight;
 
     var y = event.pageY + view.scrollTop;
     var x = event.pageX + view.scrollLeft;
