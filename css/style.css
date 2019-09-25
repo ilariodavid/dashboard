@@ -1,0 +1,119 @@
+*, *::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body{    
+    height: 100%;
+}
+
+.view{
+    position: relative;
+    overflow: scroll;
+    height: 100%;
+    width: 100%;
+}
+
+.dashboard-container {
+    width: 100%;
+    height: 100%;
+    padding: 16px 16px 0;
+    box-sizing: border-box;
+}
+
+/*.grid-item{
+    transition: all .1s ease;    
+}*/
+
+.grid-item {
+    transition: all .1s ease;
+    border: 1px solid #141414;
+    position: absolute; 
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    background: white;
+}
+
+.grid-item-header {
+    height: 28px;
+    cursor: move;
+    word-wrap: break-word;
+    display: block;
+}
+
+.grid-item-header:hover {
+    transition: background-color .1s ease-in-out;
+    /*background-color: #343436;*/
+    background-color: #eee;
+}
+
+.panel-title {
+    border: 0;
+    font-weight: 500;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 28px;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.grid-item-header-title{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: calc(100% - 38px);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.resizable-handle{
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiNmZmZmZmYwMCIgd2lkdGg9IjYiIGhlaWdodD0iNiI+PHBhdGggZD0iTTYgNkgwVjQuMmg0LjJWMEg2djZ6IiBvcGFjaXR5PSIuMzAyIi8+PC9zdmc+);
+    background-position: 100% 100%;
+    padding: 0 3px 3px 0;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+}
+
+.resizable-handle:after {
+    border-right: 2px solid #555;
+    border-bottom: 2px solid #555;
+}
+
+.resizable-handle:after {
+    content: "";
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    width: 5px;
+    height: 5px;
+    border-right: 2px solid rgba(0,0,0,.4);
+    border-bottom: 2px solid rgba(0,0,0,.4);
+}
+
+.grid-item > .resizable-handle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: 0;
+    right: 0;
+    cursor: se-resize;
+}
+
+.grid-item.grid-item-placeholder {
+    border: none;
+}
+
+.grid-item-placeholder {
+    box-shadow: 0 0 4px #bbb;
+    background:#eee;
+    z-index: 0;
+    opacity: unset;
+    z-index: 0;
+}
