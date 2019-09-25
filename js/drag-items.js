@@ -89,15 +89,18 @@ function moveAt(pageX, pageY) {
 
 function onMouseMove(event) {        
 
-        var y = event.pageY + document.querySelector('.view').scrollTop;
-        var x = event.pageX + document.querySelector('.view').scrollLeft;
-        moveAt(x, y);
-    
+    var view = document.querySelector('.view');
+    var sh = view.scrollHeight;
 
-   
-        movePlaceholder(currentItem);
-   
-    
+    var y = event.pageY + view.scrollTop;
+    var x = event.pageX + view.scrollLeft;
+
+    moveAt(x, y);
+
+    movePlaceholder(currentItem);   
+
+    currentItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+
 }
 
 
