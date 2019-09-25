@@ -46,7 +46,7 @@ for ( var i = 0 ; i < gridItems.length; i++){
             y: shiftY
         };
 
-        moveAt(event.pageX, event.pageY);
+        //moveAt(event.pageX, event.pageY);
 
         // move the current item on mousemove
         document.addEventListener('mousemove', onMouseMove);
@@ -88,13 +88,15 @@ function moveAt(pageX, pageY) {
 }       
 
 function onMouseMove(event) {        
-    setTimeout(function(){
-        moveAt(event.pageX, event.pageY);
-    }, 10);   
 
-    setTimeout(function(){
+        var y = event.pageY + document.querySelector('.view').scrollTop;
+        var x = event.pageX + document.querySelector('.view').scrollLeft;
+        moveAt(x, y);
+    
+
+   
         movePlaceholder(currentItem);
-    }, 10);   
+   
     
 }
 
